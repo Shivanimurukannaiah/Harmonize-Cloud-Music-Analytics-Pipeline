@@ -48,48 +48,4 @@ artists: Artist details (name, location).
 
 time: Timestamp breakdown (hour, day, week, etc.).
 
-🚀 How to Run
-1. Setup Configuration
-Update dwh.cfg with your AWS Redshift cluster details and S3 paths:
-
-ini
-Copy
-[CLUSTER]
-HOST=your-cluster-endpoint
-DB_NAME=your-database-name
-DB_USER=your-username
-DB_PASSWORD=your-password
-DB_PORT=5439
-
-[IAM_ROLE]
-ARN=your-iam-role-arn
-
-[S3]
-LOG_DATA='s3://udacity-dend/log_data'
-LOG_JSONPATH='s3://udacity-dend/log_json_path.json'
-SONG_DATA='s3://udacity-dend/song_data'
-2. Create Tables
-Run this to initialize tables in Redshift:
-
-bash
-Copy
-python create_tables.py
-3. Run ETL Pipeline
-Extract data from S3, transform it, and load into Redshift:
-
-bash
-Copy
-python etl.py
-4. (Optional) Launch Redshift Cluster
-Use the IaC script to automate cluster setup:
-
-bash
-Copy
-python Redshift_Cluster_IaC.py
-📊 Example Use Cases
-Identify most-played songs.
-
-Analyze user subscription trends (free vs. premium).
-
-Track peak listening hours by region.
 
